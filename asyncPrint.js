@@ -25,7 +25,8 @@ Array.prototype.asyncPrintV2 = async function () {
   let offset = 1000;
   let i = 0;
   console.log(new Date());
-  const sleep = (m) => new Promise((r) => setTimeout(r, m));
+  const sleep = (timeout) =>
+    new Promise((resolve) => setTimeout(resolve, timeout));
 
   while (i < arr.length) {
     await sleep(offset);
@@ -39,3 +40,4 @@ Array.prototype.asyncPrintV2 = async function () {
 console.log(Array.prototype.asyncPrint);
 ['a', 'b', 'c', 'd'].asyncPrintV2();
 console.log(Array.prototype.asyncPrintV2);
+['a', 'b', 'c', 'd'].asyncPrintV3();
